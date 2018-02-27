@@ -1,0 +1,135 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:m="urn:import:gwt.material.design.client.ui" 
+             xmlns:m.table='urn:import:gwt.material.design.client.ui.table'
+             xmlns:window="urn:import:gwt.material.design.addins.client.window"
+             xmlns:ma="urn:import:gwt.material.design.addins.client.combobox"
+             xmlns:mn="urn:import:gwt.material.design.addins.client.menubar" >
+
+
+   
+    <g:HTMLPanel>
+        
+        <!-- Container -->
+      
+        <m:MaterialRow layoutPosition="RELATIVE" grid="l12 s12 m12" marginBottom="0">
+            <m:MaterialPanel ui:field="mainPanel" paddingTop="0" paddingBottom="0" layoutPosition="RELATIVE" marginBottom="0" grid="l12 m12 s12" padding="0">
+                <m:MaterialRow ui:field="mainHeader">
+                    <m:MaterialRow marginBottom="0"   height="12px" paddingTop="50" paddingBottom="10" paddingLeft="0" backgroundColor="GREY_LIGHTEN_2">
+                        
+                        <m:MaterialLink activates="dpaccount" ui:field="info" text="Item Register" marginTop="20" iconType="INFO" textColor="GREY" fontSize="1em" grid="l3 m3 s3"/>
+                        
+                        <m:MaterialColumn grid="l2 m2 s2" marginTop="20">
+                            <m:MaterialBadge ui:field="sResultd" text="0 Records" layoutPosition="RELATIVE" left="20" backgroundColor="BLUE" float="LEFT"/>
+                        </m:MaterialColumn>
+                        <m:MaterialColumn grid="l2 m2 s2" marginTop="20">
+                            
+                        </m:MaterialColumn>
+                        <m:MaterialColumn marginTop="20" grid="l5 m5 s5" addStyleNames="right-align">
+                            <m:MaterialIcon ui:field="btnprint" tooltip="Print" iconType="PRINT" iconColor="BLUE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                            <mn:MaterialMenuBar  ui:field="menuBar" float="LEFT">
+                            </mn:MaterialMenuBar>
+                            <m:MaterialButton float="LEFT" ui:field="stbtnadd" text="Add New" waves="LIGHT" backgroundColor="BLUE_LIGHTEN_3"  textColor="WHITE" iconType="ADD" iconPosition="LEFT"/>
+                            <m:MaterialIcon ui:field="btnrefresh" tooltip="Reload" iconType="REFRESH" iconColor="BLUE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                            <m:MaterialIcon ui:field="btnsetting" tooltip="Settings" iconType="SETTINGS" iconColor="BLUE" circle="true" waves="DEFAULT" float="RIGHT"/>
+                        </m:MaterialColumn>
+                    </m:MaterialRow>
+                    <!--textAlign="RIGHT"-->
+                    <m.table:MaterialDataTable ui:field="table"
+                                               height="calc(100vh - 220px)"
+                                               useStickyHeader="true"
+                                               useRowExpansion="false"
+                                               selectionType="SINGLE"/>
+                    
+                  
+                     
+                </m:MaterialRow>
+            </m:MaterialPanel>
+        </m:MaterialRow>
+        
+        <m:MaterialPanel >
+                        
+            <m:MaterialModal  height="400px"  width="50%" ui:field="tranmodal" type="DEFAULT">
+                <m:MaterialModalContent>
+                    <m:MaterialRow>
+                        <m:MaterialColumn grid="l6">
+                            <m:MaterialLabel text="Add New Transaction  " fontWeight="BOLD" fontSize="1em" />
+                            <m:MaterialLabel text="Please provide details below." fontSize="0.9em"/>
+                        </m:MaterialColumn>
+                        <m:MaterialColumn grid="l6">
+                        </m:MaterialColumn>
+                    </m:MaterialRow>
+                    <m:MaterialRow ui:field="rowaccountchart" marginTop="30">
+                        <m:MaterialColumn grid="l12">
+                            <ma:MaterialComboBox  grid="l6" placeholder="Item" ui:field="cboitem" marginTop="20"/>
+                            <ma:MaterialComboBox  grid="l6" placeholder="Month" ui:field="cbomonth" marginTop="20"/>
+                           
+                        </m:MaterialColumn>
+                        <m:MaterialColumn grid="l12">
+                             <ma:MaterialComboBox  grid="l6" placeholder="Year" ui:field="cboyear" marginTop="20"/>
+                             <m:MaterialDatePicker  grid="l6" placeholder="Transaction Date" ui:field="dpttrandate"  marginTop="35"/>
+                        </m:MaterialColumn>
+                        <m:MaterialColumn grid="l12">
+                            
+                            <m:MaterialDoubleBox  grid="l6" placeholder="Amount" ui:field="txtamount" marginTop="35"/>
+                            <ma:MaterialComboBox  grid="l6" placeholder="Institution" ui:field="cboinstitution" marginTop="20"/>
+                           
+                        </m:MaterialColumn>
+                    </m:MaterialRow>
+                </m:MaterialModalContent>
+                <m:MaterialModalFooter textAlign="RIGHT">
+                    <m:MaterialButton ui:field="btnCancel" text="Cancel" waves="DEFAULT" type="FLAT" textColor="GREY"/>
+                    <m:MaterialButton  ui:field="btnFinish" text="Save" waves="DEFAULT" type="FLAT" textColor="BLUE"/>
+                 </m:MaterialModalFooter>
+            </m:MaterialModal>
+            
+            
+            
+        </m:MaterialPanel>
+        
+         <m:MaterialPanel >
+                        
+            <m:MaterialModal  height="350px"  width="50%" ui:field="edittranmodal" type="DEFAULT">
+                <m:MaterialModalContent>
+                    <m:MaterialRow>
+                        <m:MaterialColumn grid="l6">
+                            <m:MaterialLabel text="Editing Transaction  " fontWeight="BOLD" fontSize="1em" />
+                            <m:MaterialLabel text="Please provide details below." fontSize="0.9em"/>
+                        </m:MaterialColumn>
+                        <m:MaterialColumn grid="l6">
+                        </m:MaterialColumn>
+                    </m:MaterialRow>
+                    <m:MaterialRow ui:field="rowaccountcharts" marginTop="30">
+                         <m:MaterialColumn grid="l12">
+                            <ma:MaterialComboBox  grid="l6" placeholder="Item" ui:field="editcboitem" marginTop="20"/>
+                            <ma:MaterialComboBox  grid="l6" placeholder="Month" ui:field="editcbomonth" marginTop="20"/>
+                           
+                        </m:MaterialColumn>
+                        <m:MaterialColumn grid="l12">
+                             <ma:MaterialComboBox  grid="l6" placeholder="Year" ui:field="editcboyear" marginTop="20"/>
+                             <m:MaterialDatePicker  grid="l6" placeholder="Transaction Date" ui:field="editdpttrandate"  marginTop="35"/>
+                        </m:MaterialColumn>
+                        <m:MaterialColumn grid="l12">
+                            
+                            <m:MaterialDoubleBox  grid="l6" placeholder="Amount" ui:field="edittxtamount" marginTop="35"/>
+                            <ma:MaterialComboBox  grid="l6" placeholder="Institution" ui:field="editcboinstitution" marginTop="20"/>
+                           
+                        </m:MaterialColumn>
+                    </m:MaterialRow>
+                </m:MaterialModalContent>
+                <m:MaterialModalFooter textAlign="RIGHT">
+                    <m:MaterialButton ui:field="editbtnCancel" text="Cancel" waves="DEFAULT" type="FLAT" textColor="GREY"/>
+                    <m:MaterialButton  ui:field="editbtnFinish" text="Save" waves="DEFAULT" type="FLAT" textColor="BLUE"/>
+                 </m:MaterialModalFooter>
+            </m:MaterialModal>
+            
+            
+            
+        </m:MaterialPanel>
+        
+        
+        
+    </g:HTMLPanel>
+    
+</ui:UiBinder>

@@ -1,0 +1,61 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:m="urn:import:gwt.material.design.client.ui">
+             
+    
+    <m:MaterialPanel>
+
+        <m:MaterialNavBar depth="10000"  backgroundColor="BLUE_LIGHTEN_3" activates="sidenav" layoutPosition="FIXED">
+            <m:MaterialNavSection  float="LEFT" hideOn="NONE">
+                <m:MaterialImage ui:field="imgbanner" float="LEFT" width="100px" height="64px" marginRight="20" url="https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/2014/02/Olympic-logo.png"/>
+                <m:MaterialNavBrand marginLeft="0" ui:field="apptitle" text="Comsoft Acuity Inventory and Asset Management (INASM)"  float="LEFT" textAlign="LEFT" />
+                  
+            </m:MaterialNavSection>
+            <m:MaterialNavSection float="RIGHT">
+                <m:MaterialLink text="Settings"/>
+                <m:MaterialLink iconType="SETTINGS" />
+                
+            </m:MaterialNavSection>
+        </m:MaterialNavBar>
+        <m:MaterialSideNav  allowBodyScroll="false" ui:field="mdisidenave" backgroundColor="GREY_LIGHTEN_4" m:id="sidenav" type="PUSH" width="250" paddingTop="70" alwaysShowActivator="true" showOnAttach="true">            <m:MaterialLink ui:field="dashboard" text="Dashboard" iconType="DASHBOARD"/>
+            <m:MaterialLink ui:field="settings" text="Settings" iconType="SETTINGS"/>
+            <m:MaterialCollapsible>
+                <!-- PARENT 1 -->
+                <m:MaterialCollapsibleItem>
+                    <m:MaterialCollapsibleHeader waves="DEFAULT">
+                        <m:MaterialLink  text="User" iconType="ACCOUNT_CIRCLE"/>
+                    </m:MaterialCollapsibleHeader>
+                    <m:MaterialCollapsibleBody>
+                        <m:html.UnorderedList>
+                            <m:MaterialLink iconType="PERSON"  ui:field="userinfo" text="User"/>
+                            <m:MaterialLink iconType="LOCK_OPEN"  ui:field="userpermission" text="User Permission"/>
+                            <m:MaterialLink iconType="GROUP_WORK"  ui:field="userassignedgroup" text="User Group"/>
+                            <m:MaterialLink iconType="SUPERVISOR_ACCOUNT"  ui:field="usergrouppermission" text="Group Permission"/>
+                        </m:html.UnorderedList>
+                    </m:MaterialCollapsibleBody>
+                </m:MaterialCollapsibleItem>
+                 <m:MaterialLink iconType="ACCOUNT_BOX"  ui:field="supplier" text="Supplier"/>
+                <!-- PARENT 2 -->
+                <m:MaterialCollapsibleItem>
+                    <m:MaterialCollapsibleHeader waves="DEFAULT">
+                        <m:MaterialLink text="Store" iconType="ACCOUNT_BALANCE"/>
+                    </m:MaterialCollapsibleHeader>
+                    <m:MaterialCollapsibleBody>
+                        <m:html.UnorderedList>
+                            <m:MaterialLink iconType="FOLDER"  ui:field="store" text="Store"/>
+                            <m:MaterialLink iconType="DESCRIPTION"  ui:field="stockleveltype" text="Stock Level"/>
+                        </m:html.UnorderedList>
+                    </m:MaterialCollapsibleBody>
+                </m:MaterialCollapsibleItem>
+
+            </m:MaterialCollapsible>
+           <m:MaterialLink iconType="BOOK"  ui:field="trandepreciation" text="Transaction"/>
+         </m:MaterialSideNav>
+        <m:MaterialContainer>
+            <m:MaterialPanel textAlign="CENTER" ui:field="contentPannel">
+               
+            </m:MaterialPanel>
+        </m:MaterialContainer>
+
+    </m:MaterialPanel>
+</ui:UiBinder>
